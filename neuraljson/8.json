@@ -1,0 +1,11 @@
+{
+    "name": "The COMMUNITY",
+    "description": "The Community, a level 8 NFT of the Neuron Network.",
+    "image": "ipfs://QmVDDPdqCqFEGS71hoJZAm41oFpnuLfwYrB94x6cPjbp5F/n8.png",
+    "attributes": [
+      {
+        "trait_type": "Level",
+        "value": "8"
+      }
+    ]
+  }

@@ -1,0 +1,11 @@
+{
+    "name": "The SEARCHER",
+    "description": "The Searcher, a level 6 NFT of the Neuron Network.",
+    "image": "ipfs://QmVDDPdqCqFEGS71hoJZAm41oFpnuLfwYrB94x6cPjbp5F/n6.png",
+    "attributes": [
+      {
+        "trait_type": "Level",
+        "value": "6"
+      }
+    ]
+  }

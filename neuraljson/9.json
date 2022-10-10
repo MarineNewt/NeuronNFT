@@ -1,0 +1,11 @@
+{
+    "name": "The SYSTEM",
+    "description": "The System, a level 9 NFT of the Neuron Network.",
+    "image": "ipfs://QmVDDPdqCqFEGS71hoJZAm41oFpnuLfwYrB94x6cPjbp5F/n9.png",
+    "attributes": [
+      {
+        "trait_type": "Level",
+        "value": "9"
+      }
+    ]
+  }

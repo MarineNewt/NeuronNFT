@@ -1,0 +1,83 @@
+/* Styles go here */
+
+.compbox{
+    border: .7vw solid black;
+    border-radius: 3vh;
+    padding: 1vh;
+    margin: 2vh;
+    width: 40vw;
+    height: 70vh;
+    color: rgb(218, 225, 14);
+    background-color: rgb(0, 0, 0);
+    align-content: center;
+    text-align: center;
+}
+
+.layout{
+    margin-top: 50px;
+    width: 100vw;
+    align-content: center;
+}
+
+.comp-font-sizer{
+    font-size: calc(1vw + 10px);
+}
+
+.comp-head-sizer{
+    font-size: 3vw;
+}
+
+
+.flexit{
+    display: flex;
+    align-content: center;
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.inforead{
+    font-size: 1.5vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    text-align: left;
+}
+
+.inforeadinner{
+    font-size: 1.5vw;
+    margin-left: 20vw;
+    margin-right: 10vw;
+    text-align: left;
+}
+
+.navimage{
+    height: calc(2.5vh + 25px);
+}
+
+.nopad{
+    padding: 0;
+    margin: 0;
+}
+
+.inputbtn {
+    color: black;
+    background-color: blue; 
+    width: calc(3vw + 55px);
+    margin: 0 auto;
+    padding: 0;
+    text-align: center; 
+    vertical-align: "middle";
+    display: inline-block;
+    font-size: calc(1vw + 13px);
+    border-radius: 4px;
+}
+
+.backgrounger {
+    background-image: url(/images/background.jpg);
+    background-size: contain;
+    height: 100vh;
+    margin: 0;
+}

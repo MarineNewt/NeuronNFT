@@ -1,0 +1,11 @@
+{
+    "name": "The TRIAD",
+    "description": "The Triad, a level 3 NFT of the Neuron Network.",
+    "image": "ipfs://QmVDDPdqCqFEGS71hoJZAm41oFpnuLfwYrB94x6cPjbp5F/n3.png",
+    "attributes": [
+      {
+        "trait_type": "Level",
+        "value": "3"
+      }
+    ]
+  }
