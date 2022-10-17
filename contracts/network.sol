@@ -58,9 +58,9 @@ contract NeuronNFT is ERC721, Ownable {
         if (adder4 > 2) {adder4 = 2;}
         uint256 adder5 = balanceOf(tokenNetwork[tokenId][4]);
         if (adder5 > 2) {adder5 = 2;}
-        uint256 tier = (1 + adder1 + adder2 + adder3 + adder3 + adder4 + adder5);
-        if (tier == 10){
-            if (balanceOf(ownerOf(tokenId)) == 1) {tier = 11;}
+        uint256 tier = (1 + adder1 + adder2 + adder3 + adder4 + adder5);
+        if (tier == 11){
+            if (balanceOf(ownerOf(tokenId)) > 1) {tier = 10;}
         }
         
         return bytes(currentBaseURI).length > 0 ? string(abi.encodePacked(currentBaseURI, tier , ".json")): "";

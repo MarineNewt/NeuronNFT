@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import Web3 from 'web3';
 import NFTcon from '../contracts/neuron.json'
 import btnimg from "./images/logo.png"
-import bkgrd from "./images/backgrd.png"
+import dia from "./images/dia.png"
+import dia2 from "./images/dia2.png"
+import bkgrd from "./images/alt5.png"
 import NavBar from './NavBar.js';
 import './App.css';
-
 class App extends Component {
 
   async componentWillMount() {
@@ -60,6 +61,15 @@ class App extends Component {
     this.setState({ loading: false })
   })}
 
+  async checker(verifyadd) {
+    verifyadd = this.input.value.toString()
+    let eli = this.state.NFTContract.methods.balanceOf(verifyadd).call()
+    let eligibility
+    if (eli > 0) {eligibility = false}
+    else {eligibility = true}
+    this.setState({ eligibility: eligibility})
+    }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -67,18 +77,20 @@ class App extends Component {
       NFTContract: {},
       tokenBalance: '0',
       NFTContractSupply: 0,
+      eligibility: true,
       loading: true
     }
   }
   
   render() {
     return (
-      <div style={{height: '250vh', margintop: '0', backgroundImage: `url( ${bkgrd} )`,
+      <div style={{height: '380vh', margintop: '0', backgroundImage: `url( ${bkgrd} )`,
       backgroundSize: 'contain'}}>
         <NavBar account = {this.state.account} />
         <br></br>
-        <div style={{left: '29vw', top: 'calc(30vh - 5vw)', position: 'absolute'}}>
-          <div id="content" className="mt-3 compbox comp-font-sizer">
+        <br></br>
+        <div className="content mt-5 mr-auto ml-auto">
+          <div id="content" className="mt-0 mr-auto ml-auto compbox comp-font-sizer">
             <h1 class="comp-head-sizer">Neuron Network</h1>
             <p>Neurons Minted: {this.state.NFTContractSupply}/1000</p>
             <p className=''>CLICK TO MINT A NEURON:</p>
@@ -140,7 +152,45 @@ class App extends Component {
               </div>
             </div>
           </form>
+          </div>
+          <br></br>
+          <div className='compbox comp-font-sizer mt-3 mr-auto ml-auto' style={{width: '75vw'}}>
+            <h1>How it works:</h1>
+            <h2>Neuron NFTs are dynamic NFTs that change based on the presence (or absence) of other NFTs.</h2>
+            <div style={{textAlign: 'left'}}>
+            <p className='mt-4'>For .015 you can mint yourself a Neuron NFT. Before minting you will choose 5 friends by address to be a part of that token's network. You must choose friends with 0 neuron NFTs; you cannot build a network on top of existing connections. Additionally a Neuron NFT cannot be owned by a wallet within its network. </p>
+            
+            <form onSubmit={(event) => {
+              event.preventDefault()
+              let verifyadd
+              verifyadd = this.input.value.toString()
+              this.checker(verifyadd)}}>
+              <div className='input-group'>
+              <input
+                type="text"
+                ref={(input) =>  { this.input = input }}
+                className="form-control form-control-lg"
+                placeholder="0x00  (Enter an Address here to check if it is eligible to be a part of your network.)"
+                required />
+                <button type="submit" name='verifybtn' className="input-group-append inputbtn" style = {{color: "black"}} >Check</button>
+                </div>
+            </form>
+            {this.state.eligibility === false && <p style={{color: 'red'}}>This address cannot be used.</p>}
+            {this.state.eligibility === true && <p style={{color: 'green'}}>This address may be used.</p>}
 
+            <p className='mt-4'>Now you can mint, but this project doesn't stop at minting...</p>
+            
+            <p className='mt-4'>Upon minting you will see The CELL in your wallet. All Neuron NFTs begin as a CELL, but only some remain as one. Whenevever someone in your token's network gets a neuron NFT in their wallet your neuron NFT will expand its network level and transform into its next form.</p>
+            
+            <div style={{textAlign: 'center', margin: '40px'}}><img style={{width: '45vw'}} src={dia} alt='diagram 1'/></div>
+
+            <p>A network can't be supported by just one person/wallet, thus only 2 neurons per wallet contribute towards the level rating of the Neurons that have that wallet in their network:</p>
+
+            <div style={{textAlign: 'center', margin: '40px'}}><img style={{width: '40vw'}} src={dia2} alt='diagram 1'/></div>
+
+            <p>Maybe your network will help you reach the top form, or maybe you will be the link that propels others forward. But be careful, to reach the final form you must only hold exactly 1 neuron in your wallet. </p>
+            </div>
+            <h3>What's in your Network?</h3>
           </div>
         </div>
       </div>
